@@ -9,12 +9,10 @@
     <link rel="stylesheet" href="../../CSS/patient-ui/patient-main.css">
     <link rel="stylesheet" href="../../CSS/patient-ui//mediaqueryyy.css">
     <!-- <link rel="stylesheet" href="../../CSS/patient-ui/backup-css/patient-information-record.css"> -->
-    <!-- <link rel="stylesheet" href="../../CSS/patient-ui/backup-css/content-area-topbar.css">  -->
-    <!-- <link rel="stylesheet" href="../../CSS/patient-ui/backup-css/patient-sidebar.css"> -->
     <!-- <link rel="stylesheet" href="../../CSS/patient-ui/backup-css/mediaquery.css"> -->
     <!-- <link rel="stylesheet" href="../../CSS/patient-ui/backup-css/patient-my-account.css"> -->
     <link rel="stylesheet" href="../../CSS/patient-ui/backup-css/patient-dashboard.css">
-    <link rel="stylesheet" href="../../CSS/shared/shared.css">
+    <link rel="stylesheet" href="../../CSS/shared-ui/shared.css">
 
 
 
@@ -67,7 +65,8 @@
 
                     </div>
 
-                    <a href="../../HTML/patient/patient-subfolder/patient-my-account.html" class="btn-my-account" data-page="../../HTML/patient/patient-subfolder/patient-my-account.html"
+                    <a href="../../HTML/patient/patient-subfolder/patient-my-account.html" class="btn-my-account" 
+                    data-page="../../HTML/patient-ui/patient-subfolder/patient-my-account.html"
                         data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard"><i class="fas fa-user"></i>
                         <span>My Account</span></a>
                 </div>
@@ -77,25 +76,26 @@
 
                         <!-- ========== Navigation Section ========== -->
                         <li class="sidebar-section-title">Navigation</li>
-                        <li><a href="../../HTML/patient/patient-subfolder/patient-dashboard.html" class="btn-sidebar d-flex align-items-center"
-                                data-page="../../HTML/patient/patient-subfolder/patient-dashboard.html" data-bs-toggle="tooltip"
+                        <li><a href="../../HTML/patient-ui/patient-subfolder/patient-dashboard.html" class="btn-sidebar d-flex align-items-center"
+                                data-page="../../HTML/patient-ui/patient-subfolder/patient-dashboard.html" data-bs-toggle="tooltip"
                                 data-bs-placement="right" title="Dashboard">
                                 <i class="fa-solid fa-table-columns"></i><span>Dashboard</span></a>
-
                         </li>
-                        <li><a href="../../HTML/patient/patient-subfolder/patient-information-record.html"
+                        <li><a href="../../HTML/patient-ui/patient-subfolder/patient-information-record.html"
                                 class="btn-sidebar d-flex align-items-center"
-                                data-page="../../HTML/patient/patient-subfolder/patient-information-record.html">
+                                data-page="../../HTML/patient-ui/patient-subfolder/patient-information-record.html">
                                 <i class="fas fa-book"></i> <span>My Record</span></a>
                         </li>
 
-                        <li><a href="../../HTML/patient/my-information-clicked.html"
+                        <li><a href="../../HTML/patient-ui/patient-subfolder/patient-appointments.html"
                                 class="btn-sidebar d-flex align-items-center"
-                                data-page="../../HTML/patient-u/my-information-clicked.html">
-                                <i class="fas fa-calendar"></i> <span>Appointment</span></a>
+                                data-page="../../HTML/patient-ui/patient-subfolder/patient-appointments.html">
+                                <i class="fas fa-calendar"></i> <span>Appointments</span></a>
                         </li>
 
-                        <li><a href="#" class="btn-sidebar d-flex align-items-center" data-page="Record"
+                        <li><a href="../../HTML/patient-ui/patient-subfolder/patient-treatment-history.html" 
+                            class="btn-sidebar d-flex align-items-center" 
+                            data-page="../../HTML/patient-ui/patient-subfolder/patient-treatment-history.html"
                                 data-bs-toggle="tooltip" data-bs-placement="right" title="My Record">
                                 <i class="fa-solid fa-clipboard"></i><span>Treatment History</span></a>
                         </li>
@@ -103,8 +103,11 @@
 
                         <!-- ========== Components Section ========== -->
                         <li class="sidebar-section-title">Components</li>
-                        <li><a href="#" class="btn-sidebar d-flex align-items-center" data-page="help">
-                                <i class="fa-solid fa-circle-question"></i> <span>Help</span></a></li>
+                        <li><a href="../../HTML/patient-ui/patient-subfolder/patient-help.html" 
+                            class="btn-sidebar d-flex align-items-center" 
+                            data-page="../../HTML/patient-ui/patient-subfolder/patient-help.html">
+                                <i class="fa-solid fa-circle-question"></i> <span>Help</span></a>
+                            </li>
                         <li><a href="../../HTML/user-interface/index.html" class="btn-sidebar btn-backtohome d-flex align-items-center"
                                 >
                                 <i class="fa-solid fa-house"></i> <span>Back to Homepage</span></a></li>
@@ -121,7 +124,7 @@
             </div>
         </aside>
 
-        <script src="../../Javascript/shared/shared.js"></script>
+        <script src="../../Javascript/shared-ui/shared.js"></script>
 
         <!-- ============================Content Area Container============================ -->
 
@@ -134,8 +137,6 @@
                     </div>
                     <h3>Today's Date:</h3>
                     <div class="today-date" id="today-date">
-
-                        <script src="../../Javascript/patient-ui/patient-topbar-date.js"></script>
                     </div>
                 </div>
 
@@ -145,13 +146,11 @@
                             <i class="fa-solid fa-envelope"></i>
                             <span class="badge message-badge">1</span>
                         </a>
-
                         <a href="" class="icon-wrapper icon-bell-notif me-5 position-relative" data-page="Notification"
                             title="Notifications">
                             <i class="fas fa-bell"></i>
                             <span class="badge system-notif-badge">1</span>
                         </a>
-
                     </div>
                     <h4 class="topbar-profile-name" id="topbar-profilename">Malibu, Dracy</h4>
                     <div class="contentarea-topbar-user">

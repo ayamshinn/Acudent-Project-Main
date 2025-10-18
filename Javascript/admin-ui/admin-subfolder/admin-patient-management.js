@@ -1,4 +1,4 @@
-function initStaffPatientRecords() {
+function initAdminPatientManagement() {
     console.log('My Account page initialized ✅');
 
     const toggleButtons = document.querySelectorAll('.toggle-button');
@@ -69,4 +69,4 @@ function initStaffPatientRecords() {
 
 }
 
-document.addEventListener('DOMContentLoaded', initStaffPatientRecords);
+document.addEventListener('DOMContentLoaded', initAdminPatientManagement);

@@ -7,7 +7,7 @@
     --color-text2: #502803;
   
   }
-.patient-profiles-container{
+.patient-information-record-main-container{
   width: 100%;
   padding: 15px 10px 20px 30px;
 }
@@ -28,6 +28,23 @@
     font-size: .85rem;
     margin: 0;
 }
+.add-patient-btn-container {
+  margin-right: 20px;
+}
+
+.add-patient-btn-container button {
+  background-color: #b88b4a;
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+  color:var(--color-secondary);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 
 .patient-information-record-container {
     /* background-color: var(--color-secondary2); */
@@ -44,13 +61,21 @@
   display: flex; /* Ensure it's a flex container (already set via Bootstrap d-flex) */
   align-items: center; /* Vertically align items if needed */
 }
+.patient-record-search-wrapper i {
+right: 10px; 
+top: 50%; 
+transform: translateY(-50%);
 
-.search-wrapper-patient input {
+}
+.patient-record-search-wrapper input {
   border: 1px solid var(--color-text);
   border-radius: 20px;
-  padding: 8px 35px 8px 12px; /* Space for the search icon */
+  width: 200px;
+  font-size: .75rem;
+  padding: 4px 35px 4px 12px; /* Space for the search icon */
   flex: 1; /* Allow the input to grow and take available space */
 }
+
 
 .search-wrapper-patient i {
   position: absolute;
@@ -61,11 +86,19 @@
   pointer-events: none;
 }
 
+.container-tool-wrapper button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.15rem;
+  color: var(--color-text);
+}
+
+
 .filter-search-container-wrapper {
-  font-size: 1.8rem;
+
   color: var(--color-text);
   cursor: pointer;
-  margin-left: 10px; /* Add some spacing between search and filter */
+  margin-left: 10px; 
 }
 
 .form-control:focus {
@@ -76,47 +109,132 @@
 .toggle-container{
   display: flex;
   flex-direction: column;
-  margin-left: auto;
-  
+  margin-left: auto;  
 }
 .toggle-wrapper{
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;
 }
-.toggle-button-menu button{
-  width: 150px;
-    padding: 0.8rem;
-    border: 1px solid var(--color-text);
-    border-radius: 5px;
-    background-color: #fff;
-    color: var(--color-text);
-}
-.toggle-button-menu button:hover{
-  background-color: var(--color-secondary);
-}
-.toggle-wrapper button.active-tab{
-  background-color: var(--color-primary);
-    color: var(--color-text); /* optional, for contrast */
-    border-color: var(--color-text);
-    font-weight: 600;
+.toggle-wrapper button:hover {
+  transform: translateY(-2px);
+  transition: transform 0.5s ease;
 }
 
+.toggle-wrapper button.active-tab{
+    color: var(--color-text); 
+    border-color: var(--color-tertiary);
+    transform: translateY(-2px);
+
+}
+
+.count-show-container {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: var(--color-text2);
+margin: 0 15px;
+}
+
+/* Optional small label or title */
+.count-show-header {
+  font-weight: 500;
+  color: var(--color-text2);
+  margin-top: auto;
+}
+
+/* Wrapper for the Load More / Less buttons */
+.count-show-toggle-wrapper {
+  display: flex;
+  gap: 8px;
+  width: fit-content;
+  margin-left: auto;
+}
+
+/* Button styling */
+.count-show-toggle-wrapper button {
+  background-color: #b88b4a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.count-show-toggle-wrapper button:hover {
+  background-color: #946b36;
+  transform: translateY(-1px);
+}
+
+/* “Load Less” variant (lighter tone) */
+.count-show-toggle-wrapper .load-less {
+  background-color: #e0d1b3;
+  color: #4a3200;
+}
+
+.count-show-toggle-wrapper .load-less:hover {
+  background-color: #d0b783;
+}
 
 
 /*Patient Profile box */
 
 .patient-profile-box-main-container {
 
-    background-color: white;
     border-radius: 12px;
-    padding-left: 40px;
+    padding-left: 24px;
     padding-bottom: 30px;
+    min-height: 60vh;
+
+
 }
 .patient-profile-box-container {
-    width: 100%;
-    padding: 5px 5px 20px 30px;
-    justify-items: center;
+  width: 100%;
+  padding: 5px 1px 20px 30px;
+  justify-items: center;    
+  overflow-y: auto;
+  max-height: 90vh;
+  background-color: white;
+  border: 1px solid #502c003f;
+  border-radius: 12px;
+
+  /* smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+/* ===== Scrollbar Styling ===== */
+.patient-profile-box-container::-webkit-scrollbar {
+  width: 8px;              /* scrollbar width */
+}
+
+.patient-profile-box-container::-webkit-scrollbar-track {
+  background: #f1f1f1;     /* track color */
+  border-radius: 8px;
+}
+
+.patient-profile-box-container::-webkit-scrollbar-thumb {
+  background: #b88b4a;     /* scrollbar color */
+  border-radius: 8px;
+}
+
+.patient-profile-box-container::-webkit-scrollbar-thumb:hover {
+  background: #946b36;     /* darker on hover */
+}
+
+
+
+
+/* For Firefox */
+.patient-profile-box-container {
+  scrollbar-width: thin;              /* "auto" or "thin" */
+  scrollbar-color: #b88b4a #f1f1f1;   /* thumb color | track color */
+}
+
+
+.col-patient-profile-box{
+padding: 20px 17px 10px 17px ;
 
 }
 .patient-profile-box {
@@ -145,22 +263,22 @@
     border: 1px solid #50280346;
 
 }
+
 .patient-record-img-container{
     border: 1px solid #50280346; 
      border-radius: 50%;
   background-color: var(--color-primary);
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   overflow: hidden;
-  margin-top: 10px;
 }
 .patient-record-img-container img{
-    border-radius: 50%;
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 .patient-info-container{
-    margin-top: 20px;
+  margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -180,106 +298,396 @@
 .hidden{
   display: none;
 }
-.patient-record-list-view-tb thead th{
-    background-color: var(--color-secondary);
-    padding: 1rem;
-    color: var(--color-text);
-}
-.patient-record-list-view-tb tbody td{
-    color: var(--color-text);
-    padding: 1.2rem;
-}
-.patient-record-list-view-tb tbody td button{
-    border: none;
-    color: var(--color-text);
-}
-
-
-/* Appointment logs */
-.patient-information-record-appointment-logs-modal{
-  position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* full viewport */
-    background: rgba(0, 0, 0, 0.4); /* semi-transparent background */
-    display: none; /* hidden by default */
-    justify-content: center;
-    align-items: center; /* centers vertically */
-    z-index: 10001;
-}
-.patient-record-appointment-logs-container{
-    background: #fff;
-    padding: 40px 0;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-    width: 40%;
-    height: auto;
-    max-width: 90%;
-    position: relative;
-    justify-items:center; 
-    padding: 1rem;
-}
-.patient-record-appointment-logs-container.active{
-  display: flex;
-}
-.patient-record-logs-close{
-    position: absolute;
-    left: 800px;
-    top: 1rem;
-    font-size: 2rem;
-    color: var(--color-text);
-    border: none;
-}
-.patient-record-logs-close:hover{
-  color: var(--color-tertiary);
-}
-.patient-record-logs-title{
-  padding: 1rem;
-}
-.patient-record-logs-title h3{
-  color: var(--color-text);
-  font-size: 1.4rem;
-
-}
-.patient-record-appointment-logs-modal-tb {
-  table-layout: fixed; /* makes cells respect width & wrapping */
+.patient-record-table-wrapper {
   width: 100%;
-  word-wrap: break-word;
-  word-break: break-word;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-.patient-record-appointment-logs-modal-tb thead th{
-   background-color: var(--color-secondary);
-    padding: 1rem;
-    color: var(--color-text);
-}
-.patient-record-appointment-logs-modal-tb tbody td{
-   color: var(--color-text);
-  padding: 1.2rem;
-  white-space: normal; /* allow wrapping */
-  word-break: break-word; /* break long words */
-}
-.patient-record-appointment-logs-modal-tb-body td span {
-    color: #093a14;
-    background-color: #28a74656;
-    padding: .40rem;
-    border-radius: 15px;
+  overflow-x: auto;    /* horizontal scroll if needed */
+  overflow-y: auto;    /* vertical scroll */
+  max-height: 90vh;
+  position: relative;  /* important for sticky positioning */
+  background-color: white;
+  border: 1px solid #502c006c;
+  scroll-behavior: smooth; /* smooth scrolling */
 }
 
-.patient-record-list-view-tb th, 
-  .patient-record-list-view-tb td {
-    border: 1px solid #000; /* black border */
-    padding: 8px; /* adds some space inside cells */
-    text-align: left;
+/* ===== Scrollbar Styling ===== */
+.patient-record-table-wrapper::-webkit-scrollbar {
+  width: 6px;   /* vertical scrollbar width */
+  height: 6px;  /* horizontal scrollbar height */
+}
+
+.patient-record-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;    /* track color */
+  border-radius: 6px;
+  padding-top: 1px;
+}
+
+.patient-record-table-wrapper::-webkit-scrollbar-thumb {
+  background: #b88b4a;    /* thumb color */
+  border-radius: 6px;
+}
+
+.patient-record-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #946b36;    /* darker hover color */
+}
+
+/* TABLE */
+.patient-record-list-view-tb {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 1000px;
+  font-size: .90rem; /* ensures horizontal scroll on smaller screens */
+
+}
+
+/* HEADER (sticky) */
+.patient-record-list-view-tb thead th {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  font-weight: 600;
+  padding: 1rem;
+  z-index: 2; /* keeps header above table body */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow instead of border */
+  
+}
+
+/* BODY CELLS */
+.patient-record-list-view-tb tbody td {
+  color: var(--color-text);
+  padding: 1.2rem;
+  background-color: var(--color-bg, #fff); /* ensure not transparent */
+}
+
+/* BASIC STYLING */
+.patient-record-list-view-tb th,
+.patient-record-list-view-tb td {
+  border: 1px solid #502c003f;
+  text-align: left;
+}
+
+/* Remove left border on first cell (both header and body) */
+.patient-record-list-view-tb th:first-child,
+.patient-record-list-view-tb td:first-child {
+  border-left: none;
+}
+
+/* Remove right border on last cell (both header and body) */
+.patient-record-list-view-tb th:last-child,
+.patient-record-list-view-tb td:last-child {
+  border-right: none;
+}
+
+/* Remove top border on all table headers */
+.patient-record-list-view-tb thead th {
+  border-top: none;
+}
+
+/* Remove bottom border on the very last row */
+.patient-record-list-view-tb tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+.patient-record-list-view-tb tbody td button {
+  border: none;
+  background: none;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.patient-record-list-view-tb tbody td button:hover {
+  color: #007bff; /* blue hover color */
+}
+
+.td-view-button {
+  text-decoration: underline;
+
+}
+
+
+
+.patient-information-record-main-container{
+  width: 100%;
+  padding: 15px 10px 20px 30px;
+}
+
+@media screen and (max-width: 992px) {
+  /* ============Patient Information Record============== */
+
+  .patient-information-record-main-container{
+    padding: 15px 5px 20px 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* ============Patient Information Record============== */
+
+
+
+  .patient-information-record-main-container{
+    padding: 15px 1px 20px 10px;
+  }
+  .patient-profile-box-container {
+    --bs-gutter-x: 1.75rem; 
+
+  }
+  .col-patient-profile-box {
   }
 
   .patient-record-list-view-tb {
-    border-collapse: collapse; /* ensures borders don't double up */
-    width: 100%; /* optional, makes table fill the container */
+    font-size: .80rem;
   }
 
-.patient-record-appointment-logs-modal-tb th:nth-child(1),
-.patient-record-appointment-logs-modal-tb td:nth-child(1){
-  width: 15%;
+
 }
+
+@media screen and (max-width: 576px) {
+  /* ============Patient Information Record============== */
+
+  .patient-record-search-wrapper input {
+    border: 1px solid var(--color-text);
+    border-radius: 20px;
+    width: 120px;
+    padding: 2px 35px 2px 10px; /* Space for the search icon */
+    flex: 1; /* Allow the input to grow and take available space */
+  }
+  
+  /* .container-tool-wrapper{
+    justify-content: flex-start!important;
+  } */  
+  .patient-profile-box-main-container{
+    padding-left: 0.5!important;
+  }
+
+}
+
+
+@media screen and (max-width: 450px) {
+  /* ============Patient Information Record============== */
+
+  .patient-record-img-container{
+
+  width: 90px;
+  height: 90px;
+
+}
+.patient-profile h3{
+  font-size: 1.15rem;
+  margin: 0;
+}
+.patient-profile i{
+  font-size: .85rem;
+  margin-right: 5px;
+  margin-top: 4px;
+}
+.patient-profile p{
+  font-size: .75rem;
+  margin: 0;
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================Patient Management Part 2====================== */
+.patient-information-record-main-container-detail-view{
+  width: 100%;
+  padding: 15px 15px 20px 25px;
+}
+
+/* ------------Patient Dental History Header----------------- */
+.patient-dental-history-header-container {
+  background-color: var(--color-secondary2);
+  border-bottom: 1px solid #4a330044;
+  border-radius: 8px 8px 0 0;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Header text */
+.patient-dental-history-header h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text2);
+  margin: 0;
+}
+
+/* Search bar wrapper */
+.search-bar {
+  position: relative;
+  width: 100%;
+}
+
+/* Input field */
+.patient-info-searchbar {
+  width: 100%;
+  padding: 0.25rem 2.5rem 0.25rem 1rem; /* add right padding for icon */
+  border: 1px solid #4a33008a;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: var(--color-text2);
+}
+
+.patient-info-searchbar::placeholder {
+  color: #8b7a63;
+}
+
+/* Search icon inside input */
+.search-bar i {
+  position: absolute;
+  right: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text2);
+  font-size: 0.9rem;
+  pointer-events: none; /* allows clicking through to input */
+}
+.patient-history-tb-button::after {
+  display: none !important; /* removes the Bootstrap caret */
+}
+
+.patient-history-tb-filter-search-wrapper button{
+  border: none;
+  color: var(--color-text);
+  font-size: 1rem;
+  background-color: transparent;
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .patient-dental-history-header-container {
+    text-align: center;
+  }
+
+  .search-bar {
+    margin-top: 0.5rem;
+  }
+}
+
+
+
+.patient-dental-history-tb-container {
+  background-color: var(--color-secondary2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+
+  border-radius: 0 0 8px 8px;
+
+}
+/* ------------Patient Dental History Table----------------- */
+.patient-dental-history-tb-wrapper {
+  max-height: 90vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  min-width: 100%;
+  border: 1px solid #4a33005e;
+  background-color: #fff;
+  border-radius: 4px;
+  /* smooth scrolling */
+  scroll-behavior: smooth;
+  padding-bottom: 0; /* remove space below table */
+}
+
+/* ===== Scrollbar Styling ===== */
+.patient-dental-history-tb-wrapper::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.patient-dental-history-tb-wrapper::-webkit-scrollbar-track {
+  background: #e4dfdf;
+  border-radius: 5px;
+}
+
+.patient-dental-history-tb-wrapper::-webkit-scrollbar-thumb {
+  background: #b88b4a;
+  border-radius: 5px;
+}
+
+.patient-dental-history-tb-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #b88b4a;
+}
+
+/* Table styling */
+.patient-dental-history-tb {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 0; /* remove bottom space */
+}
+
+/* Remove unnecessary outer borders */
+.patient-dental-history-tb thead th {
+  border-top: none !important;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 15px 10px;
+}
+.patient-dental-history-tb tbody td {
+
+  font-weight: 400;
+  font-size: .85rem;
+  padding: 15px 10px;
+}
+.patient-dental-history-tb th:first-child,
+.patient-dental-history-tb td:first-child {
+  border-left: none !important;
+}
+.patient-dental-history-tb th:last-child,
+.patient-dental-history-tb td:last-child {
+  border-right: none !important;
+}
+.patient-dental-history-tb tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Inner table borders */
+.patient-dental-history-tb th,
+.patient-dental-history-tb td {
+  border: 1px solid #4a330060;
+  text-align: left;
+  vertical-align: middle;
+  padding: 8px 12px;
+  color: var(--color-text2);
+}
+
+/* Sticky header with primary color */
+.patient-dental-history-tb thead th {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-secondary); /* <-- applied here */
+  color: var(--color-text2);
+  z-index: 5;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+  white-space: nowrap;
+}
+
+/* Hover effect */
+.patient-dental-history-tb tbody tr:hover {
+  background-color: #f5f5f5;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Dropdown alignment */
+.patient-dental-history-tb th .dropdown-toggle {
+  background: transparent;
+  color: inherit;
+}
+
+.patient-dental-history-tb th .dropdown-menu {
+  font-size: 0.9rem;
+  min-width: 120px;
+}
+
+

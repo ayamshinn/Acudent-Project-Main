@@ -1,40 +1,47 @@
-<div id="patient-profiles" class="patient-profiles-container">
+<div id="patient-information-record-main-container-id" class="hidden patient-information-record-main-container">
     <hr class="hr" style="color: #9E5B08;">
 
-    <div class="patient-profile ">
-        <div class="header-text d-flex flex-row mb-2">
-            <i class="fas fa-user-friends"></i>
-            <h3>Patient Records</h3>
+    <div class="wrapper d-flex flex-wrap">
+        <div class="patient-profile ">
+            <div class="header-text d-flex flex-row mb-2">
+                <i class="fas fa-user-friends"></i>
+                <h3>Patient Information Records</h3>
+            </div>
+            <div class="description-header-text">
+                <p>Manage and update patient information records to ensure accurate and organized clinic data.</p>
+            </div>
         </div>
-        <div class="description-header-text">
-            <p>Manage and update patient appointment records to ensure accurate and organized clinic data.</p>
+        <div class="add-patient-btn-container ms-auto">
+            <button class="add-patient-btn"><i class="fa-solid fa-user-plus"> </i> Add New Patient</button>
         </div>
     </div>
 
-    <div class="patient-information-record-container mt-4 border ">
-        <section class="container-tools">
-            <div class="d-flex justify-content-end align-items-center gap-3 flex-wrap">
+    <div class="patient-information-record-container mt-4 border pt-2  ">
+        <section class="container-tools px-3">
+            <div class="container-tool-wrapper d-flex justify-content-end align-items-center gap-3 flex-wrap">
 
                 <!-- 🔍 Search bar -->
                 <div class="patient-record-search-wrapper position-relative">
                     <input type="text" name="patient-record-searchbar" class="patient-record-searchbar form-control"
                         placeholder="Search">
-                    <i class="fas fa-search position-absolute"
-                        style="right: 10px; top: 50%; transform: translateY(-50%);"></i>
+                    <i class="fas fa-search position-absolute"></i>
                 </div>
 
                 <!-- ⚙️ Filter icon -->
-                <div class="filter-search-container-wrapper">
-                    <span id="filter-patient"><ion-icon name="options-outline"></ion-icon></span>
+                <div class="filter-search-container-wrapper ">
+                    <button class="toggle-button active-tab" data-target="patient-record-id" title="Tile View">
+                        <i class="fa-solid fa-sliders"></i>
+                    </button>
+
                 </div>
 
                 <!-- 🧩 Toggle buttons -->
                 <div class="toggle-wrapper d-flex">
                     <button class="toggle-button active-tab" data-target="patient-record-id" title="Tile View">
-                        <ion-icon name="grid-outline"></ion-icon>
+                        <i class="fa-solid fa-table-columns"></i>
                     </button>
                     <button class="toggle-button" data-target="patient-record-list-view-id" title="List View">
-                        <ion-icon name="list-outline"></ion-icon>
+                        <i class="fa-solid fa-list"></i>
                     </button>
                 </div>
 
@@ -42,12 +49,23 @@
         </section>
 
 
-        <hr class="mt-2 mb-4">
-        <div class="patient-profile-box-main-container m-3" id="patient-record-id">
-            <div class="row patient-profile-box-container row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 mt-2 g-5">
+        <hr class="mt-2 mb-4" style="color: #9E5B08;">
+        <div class="count-show-container d-flex flex-row py-2">
 
-                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <div class="patient-profile-box" tabindex="0" data-target="patient-information-record-appointment-logs-modal-id">
+            <div class="count-show-header ">Showing 50 of 231</div>
+            <div class="count-show-toggle-wrapper ">
+                <button class="load-less">Load Less</button>
+                <button class="load-more">Load More</button>
+            </div>
+
+        </div>
+
+        <div class="patient-profile-box-main-container  " id="patient-record-id">
+            <div
+                class="row patient-profile-box-container row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-4 ps-3">
+                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-patient-profile-box ">
+                    <div class="patient-profile-box" tabindex="0"
+                        data-target="patient-information-record-appointment-logs-modal-id">
                         <div class="patient-record-img-container">
                             <img id="patient-profile-img-id" src="profile.jpg" alt="Patient Profile Picture">
                         </div>
@@ -57,8 +75,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <div class="patient-profile-box" tabindex="0" data-target="patient-information-record-appointment-logs-modal-id">
+                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-patient-profile-box">
+                    <div class="patient-profile-box" tabindex="0"
+                        data-target="patient-information-record-appointment-logs-modal-id">
                         <div class="patient-record-img-container">
                             <img id="patient-profile-img-id" src="profile.jpg" alt="Patient Profile Picture">
                         </div>
@@ -68,8 +87,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <div class="patient-profile-box" tabindex="0" data-target="patient-information-record-appointment-logs-modal-id">
+                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-patient-profile-box">
+                    <div class="patient-profile-box" tabindex="0"
+                        data-target="patient-information-record-appointment-logs-modal-id">
                         <div class="patient-record-img-container">
                             <img id="patient-profile-img-id" src="profile.jpg" alt="Patient Profile Picture">
                         </div>
@@ -79,52 +99,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <div class="patient-profile-box" tabindex="0" data-target="patient-information-record-appointment-logs-modal-id">
-                        <div class="patient-record-img-container">
-                            <img id="patient-profile-img-id" src="profile.jpg" alt="Patient Profile Picture">
-                        </div>
-                        <div class="patient-info-container ">
-                            <h3 id="patient-information-record-name-id">Dracy Malibu</h3>
-                            <span id="patient-inforamtion-record-pID-id">P-1002</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <div class="patient-profile-box" tabindex="0" data-target="patient-information-record-appointment-logs-modal-id">
-                        <div class="patient-record-img-container">
-                            <img id="patient-profile-img-id" src="profile.jpg" alt="Patient Profile Picture">
-                        </div>
-                        <div class="patient-info-container ">
-                            <h3 id="patient-information-record-name-id">Dracy Malibu</h3>
-                            <span id="patient-inforamtion-record-pID-id">P-1002</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <div class="patient-profile-box" tabindex="0" data-target="patient-information-record-appointment-logs-modal-id">
-                        <div class="patient-record-img-container">
-                            <img id="patient-profile-img-id" src="profile.jpg" alt="Patient Profile Picture">
-                        </div>
-                        <div class="patient-info-container ">
-                            <h3 id="patient-information-record-name-id">Dracy Malibu</h3>
-                            <span id="patient-inforamtion-record-pID-id">P-1002</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <div class="patient-profile-box" tabindex="0" data-target="patient-information-record-appointment-logs-modal-id">
-                        <div class="patient-record-img-container">
-                            <img id="patient-profile-img-id" src="profile.jpg" alt="Patient Profile Picture">
-                        </div>
-                        <div class="patient-info-container ">
-                            <h3 id="patient-information-record-name-id">Dracy Malibu</h3>
-                            <span id="patient-inforamtion-record-pID-id">P-1002</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                    <div class="patient-profile-box" tabindex="0" data-target="patient-information-record-appointment-logs-modal-id">
+                <div class="col-12 col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-patient-profile-box">
+                    <div class="patient-profile-box" tabindex="0"
+                        data-target="patient-information-record-appointment-logs-modal-id">
                         <div class="patient-record-img-container">
                             <img id="patient-profile-img-id" src="profile.jpg" alt="Patient Profile Picture">
                         </div>
@@ -138,79 +115,54 @@
         </div>
 
         <!----List View Toggle------>
-        <div class="patient-profile-box-main-container hidden patient-record-list-view-container mt-5" id="patient-record-list-view-id">
-            <table class="table patient-record-list-view-tb" id="list-view-table-id">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Patient Number</th>
-                        <th>Phone Number</th>
-                        <th>Total Appointments</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="list-view-body-id">
-                    <tr>
-                        <td>Dracy Malibu</td>
-                        <td>M-12356</td>
-                        <td>09521457896</td>
-                        <td>15</td>
-                        <td><button type="button" data-target="patient-information-record-appointment-logs-modal-id">View</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dracy Malibu</td>
-                        <td>M-12356</td>
-                        <td>09521457896</td>
-                        <td>15</td>
-                        <td><button type="button" data-target="patient-information-record-appointment-logs-modal-id">View</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dracy Malibu</td>
-                        <td>M-12356</td>
-                        <td>09521457896</td>
-                        <td>15</td>
-                        <td><button type="button" data-target="patient-information-record-appointment-logs-modal-id">View</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dracy Malibu</td>
-                        <td>M-12356</td>
-                        <td>09521457896</td>
-                        <td>15</td>
-                        <td><button type="button" data-target="patient-information-record-appointment-logs-modal-id">View</button>
-                        </td>
-                    </tr>
-                </tbody>
-                
-            </table>
-        </div>
-
-        <div id="patient-information-record-appointment-logs-modal-id" class="patient-information-record-appointment-logs-modal">
-            <div class="patient-record-appointment-logs-container">
-                <button class="patient-record-logs-close">&times;</button>
-                <div class="patient-record-logs-title">
-                    <h3>Appointment History</h3>
+        <div class="patient-profile-box-main-container hidden patient-record-list-view-container p-0"
+            id="patient-record-list-view-id">
+            <div class="patient-record-table-container px-3 pt-2 pb-5 ">
+                <div class="patient-record-table-wrapper h-100 w-100 ">
+                    <table class="table patient-record-list-view-tb mb-0" id="list-view-table-id">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Patient ID</th>
+                                <th>Phone Number</th>
+                                <th>Email Address</th>
+                                <th>Total Appointments</th>
+                            </tr>
+                        </thead>
+                        <tbody id="list-view-body-id">
+                            <tr>
+                                <td>Dracy Malibu</td>
+                                <td>M-12356</td>
+                                <td>09521457896</td>
+                                <td>malibu.dracy@gmail.com</td>
+                                <td>
+                                    <div class="appointment-td-wrapper d-flex flex-row align-items-center">
+                                        <p class="mb-0" id="td-total-appointment-id">15</p>
+                                        <button type="button" class="ms-auto td-view-button "
+                                            data-target="patient-information-record-appointment-logs-modal-id">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dracy Malibu</td>
+                                <td>M-12356</td>
+                                <td>09521457896</td>
+                                <td>malibu.dracy@gmail.com</td>
+                                <td>
+                                    <div class="appointment-td-wrapper d-flex flex-row align-items-center">
+                                        <p class="mb-0" id="td-total-appointment-id">15</p>
+                                        <button type="button" class="ms-auto td-view-button"
+                                            data-target="patient-information-record-appointment-logs-modal-id">
+                                            View Details
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <table class="table patient-record-appointment-logs-modal-tb" id="patient-record-appointment-logs-modal-tb-id">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Services</th>
-                            <th>Dentist</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody class="patient-record-appointment-logs-modal-tb-body" id="patient-record-appointment-logs-modal-tb-body-id">
-                        <tr>
-                            <td>06/11/25</td>
-                            <td>Cleaningadadwadsdasdasd</td>
-                            <td>Maprusdawdawdadads</td>
-                            <td><span id="status-completed">Completed</span></td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
@@ -218,3 +170,552 @@
 
 
 
+
+
+
+
+
+
+
+
+
+<!----------------Admin Patient Profile Section Part 2----------------------->
+<div id="patient-information-record-main-container-detail-view"
+    class="patient-information-record-main-container-detail-view">
+    <hr class="hr" style="color: #9E5B08;">
+    <div class="wrapper d-flex flex-wrap">
+        <div class="patient-profile ">
+            <div class="header-text d-flex flex-row mb-2">
+                <div class="back-to-patient">
+                    <button class="back-to-patient-btn"><i class="fas fa-arrow-left"
+                            title="back to patient"></i></button>
+                </div>
+                <h3>Patient Information Records</h3>
+            </div>
+            <div class="description-header-text">
+                <p>Manage and update patient information records to ensure accurate and organized clinic data.</p>
+            </div>
+        </div>
+        <div class="add-patient-btn-container ms-auto">
+            <button class="add-patient-btn"><i class="fa-solid fa-user-plus"> </i> Add New Patient</button>
+        </div>
+    </div>
+    <div class="patient-profile-overview d-flex bg-primary py-3">
+        <div class="patient-information-profile d-flex align-items-center gap-2">
+            <div class="patient-information-profile-img">
+                <img src="" alt="">
+            </div>
+            <div class="patient-information-profile-text align-items-center">
+                <h1>Patient ID: <span class="patient-information-profile-id">M-23234</span></h1>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="patient-info-wrapper bg-secondary p-5 pt-0">
+        <div
+            class="row patient-info bg-light row-cols-xxl-2 row-cols-xl-2 row-cols-lg-1 row-cols-md-1 row-cols-sm-1 row-cols-1 pt-0 pb-4 px-3">
+            <div class=" col-xl-12 col-lg-12 col-md-12 col-sm-12 bg-info">
+                <div class="patient-general-info-container bg-warning d-flex flex-column">
+                    <div class="patient-general-info ms-auto d-flex align-items-center flex-column">
+                        <div class="patient-general-info-title">
+                            <h3>General Information</h3>
+                        </div>
+                        <div class="patient-information-view-more">
+                            <div class="row row-cols-lg-2 row-cols-xl-2 row-cols-md-2 row-cols-sm-1">
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                                    <div class="patient-information" tabindex="0">
+                                        <p>Name: <span id="patient-name">Dracula
+                                                Malibuadadawdssssssssssssssssssss</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                                    <div class="patient-information" tabindex="0">
+                                        <p>Age: <span id="patient-age-text">24 years old</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                                    <div class="patient-information" tabindex="0">
+                                        <p>Gender: <span id="patient-gender-text">Female</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                                    <div class="patient-information" tabindex="0">
+                                        <p>Address: <span id="patient-address-text">Palawan</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                                    <div class="patient-information" tabindex="0">
+                                        <p>Phone: <span id="patient-phonenum-text">053641</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                                    <div class="patient-information" tabindex="0">
+                                        <p>HMO Card: <span id="patient-HMO-card">Active</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 bg-success">
+                <div class="patient-medical-record-container bg-secondary h-100">
+                    <div class="patient-medical-record">
+                        <div class="patient-medical-record-title">
+                            <h3>Medical Record</h3>
+                        </div>
+
+                        <div class="patient-information-view-more">
+                            <div class="row row row-cols-lg-2 row-cols-xl-2 row-cols-md-2 row-cols-sm-1">
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                                    <div class="patient-information" tabindex="0">
+                                        <p>Allergy: <span id="patient-allergy-text">Shrimp</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                                    <div class="patient-information" tabindex="0">
+                                        <p>Chronic Disease: <span id="patient-cdisease-text">None</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12">
+                                    <div class="patient-information" tabindex="0">
+                                        <p>Other: <span id="patient-other-text">None</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="patient-view-more ms-auto">
+            <button class="view-more" data-target="patient-full-info">View more</button>
+        </div>
+    </div>
+
+
+    <div class="patient-dental-history-header-container p-3 mt-4">
+        <div class="row search-wrapper-patient-info row-cols-lg-2 row-cols-md-2 row-cols-sm-1">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="div">
+                <div class="patient-dental-history-header mt-2">
+                    <h3>Patient Dental History</h3>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 d-flex flex-row align-items-center gap-2">
+                <div class="search-bar">
+                    <input type="text" name="patient-info-searchbar"
+                        class="patient-info-searchbar form-control" placeholder="Search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="patient-history-tb-filter-search-wrapper dropdown">
+                    <button
+                      class="patient-history-tb-button btn btn-light dropdown-toggle"
+                      type="button"
+                      id="filterDropdown"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      title="Sort Items"
+                    >
+                      <i class="fa-solid fa-sliders"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="filterDropdown">
+                      <li><a class="dropdown-item" href="#">Alphabetical (A–Z)</a></li>
+                      <li><a class="dropdown-item" href="#">Newest First</a></li>
+                      <li><a class="dropdown-item" href="#">Oldest First</a></li>
+                    </ul>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+   
+
+    <div class="patient-dental-history-tb-container  p-3 pb-5">
+        <div class="patient-dental-history-tb-wrapper ">
+            <table class="table patient-dental-history-tb " id="patient-dental-history-tb-id">
+                <thead>
+                    <tr>
+                        <th>
+                            Date
+                            <div class="dropdown d-inline">
+                              <button class="btn btn-sm btn-light dropdown-toggle p-0 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">January</a></li>
+                                <li><a class="dropdown-item" href="#">February</a></li>
+                                <li><a class="dropdown-item" href="#">March</a></li>
+                                <li><a class="dropdown-item" href="#">April</a></li>
+                                <li><a class="dropdown-item" href="#">May</a></li>
+                                <li><a class="dropdown-item" href="#">June</a></li>
+                                <li><a class="dropdown-item" href="#">July</a></li>
+                                <li><a class="dropdown-item" href="#">August</a></li>
+                                <li><a class="dropdown-item" href="#">September</a></li>
+                                <li><a class="dropdown-item" href="#">October</a></li>
+                                <li><a class="dropdown-item" href="#">November</a></li>
+                                <li><a class="dropdown-item" href="#">December</a></li>
+                              </ul>
+                            </div>
+                          </th>
+                    
+                          <!-- SERVICES DROPDOWN -->
+                          <th>
+                            Services
+                            <div class="dropdown d-inline">
+                              <button class="btn btn-sm btn-light dropdown-toggle p-0 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Cleaning</a></li>
+                                <li><a class="dropdown-item" href="#">Filling</a></li>
+                                <li><a class="dropdown-item" href="#">Extraction</a></li>
+                              </ul>
+                            </div>
+                          </th>
+                    
+                          <th>Price</th>
+                    
+                          <!-- DENTIST DROPDOWN -->
+                          <th>
+                            Dentist
+                            <div class="dropdown d-inline">
+                              <button class="btn btn-sm btn-light dropdown-toggle p-0 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Dr. Santos</a></li>
+                                <li><a class="dropdown-item" href="#">Dr. Dela Cruz</a></li>
+                                <li><a class="dropdown-item" href="#">Dr. Lee</a></li>
+                              </ul>
+                            </div>
+                          </th>
+                    
+                          <!-- STATUS DROPDOWN -->
+                          <th>
+                            Status
+                            <div class="dropdown d-inline">
+                              <button class="btn btn-sm btn-light dropdown-toggle p-0 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                
+                              </button>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">All</a></li>
+                                <li><a class="dropdown-item" href="#">Completed</a></li>
+                                <li><a class="dropdown-item" href="#">Upcoming</a></li>
+                                <li><a class="dropdown-item" href="#">Cancelled</a></li>
+                              </ul>
+                            </div>
+                          </th>
+                    
+                          <th>Remarks</th>
+                    </tr>
+                </thead>
+                <tbody id="patient-dental-history-tb-body">
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                    <tr>
+                        <td>06/15/25</td>
+                        <td>Minartilyo ang ngipin</td>
+                        <td>P1500.00</td>
+                        <td>Dr. Maguan</td>
+                        <td>Completed</td>
+                        <td>Braces 1st Session</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<!---------------Patient Modal Full Info---------------------------->
+<!-- <div id="patient-full-info" class="patient-full-info-container">
+        <div class="patient-full-info">
+            <div class="modal-header">
+                <h3>General Information</h3>
+                <button class="close-modal-full-info">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <h4><i class="fas fa-user"></i>Personal Details</h4>
+                <div class="adminside-patientFullInfo">
+                    <p>Name: <span id="patient-name-admin"></span></p>
+                    <p>Age: <span id="patient-age-admin"></span></p>
+                    <p>Birthday: <span id="patient-birthday-admin"></span></p>
+                    <p>Gender: <span id="patient-gender-admin"></span></p>
+                    <p>Nationality: <span id="patient-nationality-admin"></span></p>
+                </div>
+
+                <h4><i class="fa solid fa-circle-info"></i> Information</h4>
+                <div class="adminside-patientFullInfo">
+                    <p>Email: <span id="patient-email-admin"></span></p>
+                    <p>Phone: <span id="patient-phone-admin"></span></p>
+                    <p>Address: <span id="patient-address-admin"></span></p>
+                </div>
+
+                <h4><i class="fa-solid fa-notes-medical"></i>Medical</h4>
+                <div class="adminside-patientFullInfo">
+                    <p>Allergy: <span id="patient-allergy-admin"></span></p>
+                    <p>Medical Condition: <span id="patient-med-condition-admin"></span></p>
+                    <p>Current Medications: <span id="patient-medications-admin"></span></p>
+                    <p>Past Surgeries: <span id="patient-pastSurgeries-admin"></span></p>
+                </div>
+
+                <h4><i class="fa-solid fa-id-card"></i>HMO Card</h4>
+                <div class="adminside-patientFullInfo">
+                    <p>HMO Provider: <span id="patient-hmoProvider"></span></p>
+                    <p>HMO ID: <span id="patient-hmoID"></span></p>
+                    <p>Valid Until: <span id="patient-hmoValid"></span></p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+<!---------------------------Modal for Patient History----------------------------------------->
+<!-- <div id="patient-detailed-history" class="admin-patient-detail-history-container">
+        <div class="admin-patient-detailed-history">
+            <div class="admin-patient-detailed-history-title">
+                <h3>Patient History</h3>
+                <button class="patient-detailed-history-close-btn">&times;</button>
+            </div>
+
+            <div class="patient-history-remarks-modal">
+                <h3>Remarks</h3>
+                <div class="patient-history-remarks-wrapper">
+                    <div class="patient-history-remarks">
+                        <p><span id="remarks-of-patient">The patietnt jaisdiasidi
+                            ksjdakdhahkdwhshdakwdhThe patietnt jaisdiasidi
+                            ksjdakdhahkdwhshdakwdh
+                            lsajdlajsdlajsldjsljdThe patietnt jaisdiasidi
+                            ksjdakdhahkdwhshdakwdh
+                            lsajdlajsdlajsldjsljd
+                            lsajdlajsdlajsldjsljd
+                        </span></p>
+                    </div>
+                </div>
+                <h3>Notes</h3>
+                <div class="patient-history-notes-wrapper">
+                    <div class="patient-history-notes">
+                        <p><span id="notes-of-patient">The patietnt jaisdiasidi
+                            ksjdakdhahkdwhshdakwdh
+                            lsajdlajsdlajsldjsljd</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
